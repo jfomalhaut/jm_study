@@ -1,0 +1,7 @@
+
+1. 프로젝트를 설치할 폴더로 이동한다.
+2. $ git clone https://github.com/jfomalhaut/jm_study.git
+	- 명령어를 작성하고 폴더를 만든다.
+3. 폴더에 들어간다.
+
+[git 명령어 모음]
