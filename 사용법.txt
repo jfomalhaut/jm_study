@@ -13,3 +13,4 @@ $ git push
 
 받을  떄 (Download)
 $ git pull
+abcdasdasda
