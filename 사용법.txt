@@ -5,3 +5,11 @@
 3. 폴더에 들어간다.
 
 [git 명령어 모음]
+추가할 때 (Upload)
+$ git pull
+$ git add .
+$ git commit -m "message"
+$ git push
+
+받을  떄 (Download)
+$ git pull
