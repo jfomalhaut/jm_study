@@ -1,0 +1,9 @@
+[2일차]
+선택자
+position
+
+flex
+grid
+transition => 시간차 변형되는 과정(s)
+animation,
+media query

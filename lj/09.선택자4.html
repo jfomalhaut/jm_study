@@ -1,0 +1,59 @@
+<html>
+<head>
+	<style>
+		.obj {
+			width: 200px;
+			height: 200px;
+			margin: 200px auto;
+			background: pink;
+			position: relative;
+			transform: rotate(45deg);
+			/* animation-name: move; */
+			animation-duration: 1s;
+			animation-iteration-count: infinite;
+		}
+		
+		.obj:hover {
+			animation-name: move;
+		}
+
+		.obj:before {
+			content: '';
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background: pink;
+			position: absolute;
+			left: -50%;
+			top: 0;
+		}
+		.obj:after {
+			content: '';
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background: pink;
+			position: absolute;
+			left: 0;
+			top: -50%;
+		}
+
+		@keyframes move{
+			0%{transform: rotate(45deg) scale(0.9);}
+			20%{transform: rotate(45deg) scale(0.95);}
+			30%{transform: rotate(45deg) scale(1);}
+			40%{transform: rotate(45deg) scale(1.2);}
+			50%{transform: rotate(45deg) scale(1.1);}
+			60%{transform: rotate(45deg) scale(1.05);}
+			70%{transform: rotate(45deg) scale(0.93);}
+			80%{transform: rotate(45deg) scale(1);}
+			90%{transform: rotate(45deg) scale(1.2);}
+			100%{transform: rotate(45deg) scale(1.1);}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="obj"></div>
+</body>
+</html>

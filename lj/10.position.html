@@ -1,0 +1,38 @@
+<html>
+<head>
+	<style>
+		body {
+			background: #f0f0f0;
+		}
+		.container {
+			width: 1000px;
+			height: 600px;
+			margin: 100 auto;
+			border: 2px solid;
+			background: #fff;
+			position: relative;
+		}
+
+		.container:hover .box {
+			right: 500px;
+		}
+
+		.box {
+			width: 150px;
+			height: 150px;
+			transition: .3s;
+			background: tomato;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box"></div>
+	</div>
+</body>
+</html>
