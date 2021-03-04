@@ -1,0 +1,18 @@
+head부분에 <style>{}</style>로 적용 한다.
+""가 았는 것은<style> .aaa{}</style>로 적용
+""가 없는 것은<style> a{}로 적용
+- text-decoration: none; -->밑줄등 꾸며진 것이 없어짐.
+- font-size: 00px; -->글자크기.
+- text-align: center; -->가운데 정렬
+- <li><style="color:gray;">aaa</li>  -->body안에 개별로 스타일 속성을 줄수도 있음.
+
+- <li><class="aa" id="bb">aaa</li>
+- class는 .aa{}로 받고, id는 #bb{}로 받는다.
+- style로 class, id 둘다 효과를 줬을 때, id 효과가 적용된다.
+
+- border-width : 00px; , border-color:   ; , border-style: solid:  -->글자에 테두리 적용.
+- display:block//inline --> 가로100%/자기영역만.
+- auto 1개/2개/4개 -->4곳 다 동일적용, 위-아래/양-옆 적용 , 위-오른쪽-아래-왼쪽
+
+-padding : 안에서 여백
+-margin : 바깥에서 여백

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+            h1:hover{
+                color:blue;
+            }
+            h1 + p{
+                color:green;
+            }
+            h1:hover+p{
+                color:red;
+            }
+            input:checked~span{
+                font-weight:bold;
+                color:lightgreen;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>안녕하세요</h1>
+        <p>여러분</p>
+        <label for="">
+            <input type="radio" name="soprts">
+            <i>장애물</i>
+            <span>농구</span>
+        </label>
+        <label for="">
+            <input type="radio" name="soprts">
+            <span>축구</span>
+        </label>
+        <label for="">
+            <input type="radio" name="soprts">
+            <span>배구</span>
+        </label>
+        <label for="">
+            <input type="radio" name="soprts">
+            <span>야구</span>
+        </label>
+    </body>
+</html>

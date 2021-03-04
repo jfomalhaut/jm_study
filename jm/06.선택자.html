@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            body{
+                background: lightgray;
+            }
+            .container{
+                width:1000px;
+                margin:0 auto;
+                background: #fff;
+                overflow: hidden;
+            }
+            .box{
+                height:calc((1000px - 20px * 3)/4);
+                background: darkgreen;
+                width: calc((1000px - 20px * 3)/4);
+                float: left;
+                margin-right: 20px;
+                margin-bottom: 20px;
+            }
+            .box:nth-of-type(4n){
+                margin-right: 0;
+
+            }                
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </body>
+</html>
