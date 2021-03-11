@@ -1,0 +1,63 @@
+<html>
+<head>
+	<style>
+		.container {
+			width: 100%;
+			height: 400px;
+			position: relative;
+		}
+		.banner {
+			width: 100%;
+			height: 400px;
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			transition: .5s;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+		.banner1 { background-image: url('https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg'); }
+		.banner2 { background-image: url('https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F2214CD4D53F89D7305'); }
+		.banner3 { background-image: url('https://t1.daumcdn.net/cfile/tistory/994670335A09371705'); }
+		.banner4 { background-image: url('https://i.ytimg.com/vi/U58H_Nd0oWI/maxresdefault.jpg'); }
+
+		.active {
+			opacity: 1;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="banner banner1 active"></div>
+		<div class="banner banner2"></div>
+		<div class="banner banner3"></div>
+		<div class="banner banner4"></div>
+	</div>
+	<button id="prev">이전</button>
+	<button id="next">다음</button>
+	<button id="start">자동시작</button>
+	<button id="stop">멈춤</button>
+	<script>
+		var index = 0;
+		var nextBtn = document.querySelector('#next');
+		var banners = document.querySelectorAll('.banner');
+		var length = banners.length;
+
+		function next() {
+			banners[index].classList.remove('active');
+			index = index + 1;
+			index = index % length;
+			banners[index].classList.add('active');
+		}
+
+		nextBtn.addEventListener('click', next);
+		// 숙제 및 심화
+		// 1. 이전 버튼 구현하기
+		// 2. (심화) 자동으로 넘어가게 하기, setInterval
+		// 3. (심화) 정지버튼 만들기, clearInterval
+	</script>
+</body>
+</html>

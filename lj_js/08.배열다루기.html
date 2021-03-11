@@ -1,0 +1,38 @@
+<html>
+<head>
+
+</head>
+<body>
+	<ul id="list"></ul>
+	<script>
+		var nf = new Intl.NumberFormat();
+		var list = document.querySelector('#list');
+		// JSON
+		var items = [
+			{ id: 1, name: '포도', price: 2000 },
+			{ id: 2, name: '체리', price: 3000 },
+			{ id: 3, name: '수박', price: 4000 },
+			{ id: 4, name: '멜론', price: 5000 },
+		];
+
+		var html = '', text = '';
+
+		init();
+
+		function init() {
+			items.forEach(function(element) {
+				text = `
+					<div class="item">
+						<h1>${element.name}</h1>
+						<h3>${nf.format(element.price)}원</h3>
+					</div>
+				`;
+				html = html + text;
+			});
+	
+			list.innerHTML = html;
+		}
+
+	</script>
+</body>
+</html>

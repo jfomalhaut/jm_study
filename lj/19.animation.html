@@ -1,0 +1,40 @@
+<html>
+<head>
+	<style>
+		* { margin: 0; padding: 0;}
+		div {
+			display: flex;
+			width: 100vw;
+			height: 100vh;
+			background: #f0f0f0;
+		}
+		span {
+			display: inline-block;
+			margin: auto;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			border-top: 8px solid blue;
+			border-right: 8px solid blue;
+			border-left: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+
+			animation-name: rotate;
+			animation-iteration-count: infinite;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+		}
+
+		@keyframes rotate {
+			0% { transform: rotate(0); border-top-color: blue; border-right-color: blue; }
+			100% { transform: rotate(360deg); border-top-color: black; border-right-color: black; }
+		}
+		
+	</style>
+</head>
+<body>
+	<div>
+		<span></span>
+	</div>
+</body>
+</html>

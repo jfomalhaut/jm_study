@@ -2,8 +2,17 @@
 선택자
 position
 
+[3일차]
 flex
 grid
 transition => 시간차 변형되는 과정(s)
 animation,
+
 media query
+
+[4일차]
+1. Javascript
+- 배열
+- 조건문
+- 반복문
+- 함수

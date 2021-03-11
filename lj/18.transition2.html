@@ -1,0 +1,31 @@
+<html>
+<head>
+	<style>
+		div {
+			display: inline-block;
+			padding: 5px 10px;
+			position: relative;
+		}
+
+		div:after {
+			content: '';
+			bottom: 0;
+			left: 50%;
+			width: 0%;
+			height: 2px;
+			background: #000;
+			position: absolute;
+			transition: .3s;
+		}
+
+		div:hover:after {
+			width: 100%;
+			left: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<div>오늘은 학교에 가는 날입니다</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+<head>
+	<style>
+		body {
+			background: #222;
+		}
+		.container {
+			width: 1200px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: 200px 1fr 200px;
+			grid-template-columns: repeat(9, 1fr);
+			grid-gap: 10px;
+		}
+		.box {
+			height: 150px;
+			background: #fff;
+		}
+		.box:nth-child(7) {
+			grid-column: 1/3;
+			grid-row: 3/5;
+			height: unset;
+			background: yellowgreen;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+</body>
+</html>
