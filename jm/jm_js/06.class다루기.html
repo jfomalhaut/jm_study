@@ -1,0 +1,36 @@
+<html>
+<head>
+    <style>
+        #box{
+            width:200px;
+            height:200px;
+            border:2px solid #ddd;
+        }
+        .red{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="change">바꾸기</button>
+    <button id="rechange">돌아오기</button>
+    <script>
+        var box=document.getElementById('box');
+        var changeBtn=document.getElementById('change');
+        var rechangeBtn=document.getElementById('rechange')
+
+        function change(){
+            box.classList.add('red');
+        }
+        function rechange(){
+            box.classList.remove('red');
+        }
+
+        //box.addEventListener('mouseenter', change);
+        changeBtn.addEventListener('click', change)
+        rechangeBtn.addEventListener('click', rechange)
+
+    </script>
+</body>
+</html>

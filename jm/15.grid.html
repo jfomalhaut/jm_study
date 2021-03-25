@@ -1,0 +1,44 @@
+<html>
+<head>
+    <style>
+        body{
+            background: #222;
+        }
+        .container{
+            width:600px;
+            margin:0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 10px;
+        }
+        .box{
+            height:150px;
+            background: #fff;
+        }
+        .box:nth-child(7){
+        
+            grid-column: 3/5;
+            background: rgb(214, 13, 13);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+</body>
+</html>

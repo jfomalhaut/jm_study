@@ -1,0 +1,38 @@
+<html>
+<head>
+    <style>
+        .header{
+            height:200px;
+            background: yellow;
+        }
+        .main{
+            height:500px;
+            background: yellowgreen;
+            display: flex;
+        }
+        .left{
+            flex-grow:1;
+            background: wheat;
+        }
+        .right{
+            flex-grow:3;
+            background: violet;
+
+        }
+        @media screen and (max-width: 750px) {
+            .left{
+              height:200px;
+            }
+            .right{
+              height:300px;
+            }
+        }
+    </style>
+</head>
+<body></body>
+    <div class="header">head</div>
+    <div class="main">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</html>

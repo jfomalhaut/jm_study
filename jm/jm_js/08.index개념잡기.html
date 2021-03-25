@@ -1,0 +1,58 @@
+<html>
+<head>
+    <style>
+        .container{
+            width:100%;
+            height:400px;
+            position: relative;
+        }
+        .banner{
+            width:100%;
+            height:400px;
+            position:absolute;
+            left:0;
+            top:0;
+            opacity: 0;
+            transition: .100s;
+        }
+        .banner1{background: tomato;}
+        .banner2{background: yellowgreen;}
+        .banner3{background: deepskyblue;}
+        .banner4{background: plum;}
+
+        .active{
+            opacity: 1;
+        }
+    </style>   
+</head>
+<body>
+    <div class="container">
+        <div class="banner banner1 active"></div>
+        <div class="banner banner2"></div>
+        <div class="banner banner3"></div>
+        <div class="banner banner4"></div>
+       
+    </div>
+    <button id="next">다음</button>
+    <script>
+        var index=0;
+        var nextBtn=document.querySelector('#next')
+        var banners=document.querySelectorAll('.banner');
+        var length=banners.length;
+
+        function next(){
+            banners[index].classList.remove('active');
+            index=index+1;
+            index=index%length;
+            banners[index].classList.add('active');
+        }
+
+        nextBtn.addEventListener('click',next);
+    </script>
+</body>
+</html>
+
+//숙제 및 심화
+//1. 이전버튼 구현하기
+//2.자동으로 넘어가게 하기, setInterval
+//3.정지버터만들기. clesrInterval

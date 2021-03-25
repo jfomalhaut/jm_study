@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <style>
+            header{
+                background: #fff;
+                height:100px;
+                border-bottom: 1px solid;
+            }
+            h1{
+                font-size:50px;
+                margin: 0; padding:0;
+                text-align:center;
+                color:#000;
+                line-height:100px;
+            }
+            main{
+                font-size:30px;
+            }
+            .box{
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Header</h1>
+        </header>
+        <main class="box">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum adipisci quidem aspernatur fuga asperiores, nihil obcaecati deserunt accusamus recusandae non saepe voluptatibus commodi vitae vero, dolores dolor corporis quod cumque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum adipisci quidem aspernatur fuga asperiores, nihil obcaecati deserunt accusamus recusandae non saepe voluptatibus commodi vitae vero, dolores dolor corporis quod cumque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum adipisci quidem aspernatur fuga asperiores, nihil obcaecati deserunt accusamus recusandae non saepe voluptatibus commodi vitae vero, dolores dolor corporis quod cumque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum adipisci quidem aspernatur fuga asperiores, nihil obcaecati deserunt accusamus recusandae non saepe voluptatibus commodi vitae vero, dolores dolor corporis quod cumque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum adipisci quidem aspernatur fuga asperiores, nihil obcaecati deserunt accusamus recusandae non saepe voluptatibus commodi vitae vero, dolores dolor corporis quod cumque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum adipisci quidem aspernatur fuga asperiores, nihil obcaecati deserunt accusamus recusandae non saepe voluptatibus commodi vitae vero, dolores dolor corporis quod cumque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum adipisci quidem aspernatur fuga asperiores, nihil obcaecati deserunt accusamus recusandae non saepe voluptatibus commodi vitae vero, dolores dolor corporis quod cumque.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum adipisci quidem aspernatur fuga asperiores, nihil obcaecati deserunt accusamus recusandae non saepe voluptatibus commodi vitae vero, dolores dolor corporis quod cumque.
+
+        </main>
+        <script>
+
+            function onScroll(){
+                var scrollTop=window.scrollY;
+                console.log(scrollTop)
+            }
+            window.addEventListener('scroll', onScroll)
+
+            function onChangeColor(){
+                if(scrollTop>0){
+                    box.classList.add('box');
+                }
+            }
+        </script>
+    </body>
+</html>

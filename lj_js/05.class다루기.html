@@ -6,9 +6,11 @@
 			width: 200px;
 			height: 200px;
 			border: 2px solid #ddd;
+			
 		}
 		.red {
 			background: red;
+			
 		}
 
 	</style>
@@ -22,7 +24,7 @@
 		var changeBtn = document.getElementById('change');
 		var removeBtn = document.getElementById('remove');
 
-		function change() {
+		function change1() {
 			box.classList.add('red');
 		}
 
@@ -30,7 +32,7 @@
 			box.classList.remove('red');
 		}
 
-		box.addEventListener('mouseenter', change);
+		box.addEventListener('mouseenter', change1);
 		removeBtn.addEventListener('click', remove);
 	</script>
 </body>
