@@ -1,0 +1,38 @@
+<html>
+<body>
+	<h1 id="count">0</h1>
+	<ul id="list"></ul>
+	<script>
+		var list = document.querySelector('#list');
+		var count = document.querySelector('#count');
+		var product = ['포도', '딸기', '수박', '참외'];
+		var cart = [];
+		var html, text = '';
+
+		print();
+
+		function addToCart(item) {
+			cart.push(item);
+			count.innerHTML = cart.length;
+		}
+
+		function print() {
+			html = '';
+			for (var i in product) {
+				text = `
+					<li>
+						<span>${product[i]}</span>
+						<button onclick="addToCart('${product[i]}')">담기</button>
+					</li>
+				`;
+				html += text;
+			}
+			list.innerHTML = html;
+		}
+
+		// 1. 하단에 담은 상품 출력하기
+		// 2. 같은 상품 안 담기기
+		// 3. (심화) 카운팅 되기. { name: '포도' ,  count: 2 }
+	</script>
+</body>
+</html>

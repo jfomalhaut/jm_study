@@ -1,0 +1,50 @@
+<html>
+<body>
+	<div>
+		<button onclick="setDate(1, 'days')">오늘</button>
+		<button onclick="setDate(3, 'days')">3일간</button>
+		<button onclick="setDate(7, 'days')">7일간</button>
+		<button onclick="setDate(1, 'months')">1개월</button>
+		<button onclick="setDate(3, 'months')">3개월</button>
+		<button onclick="setDate(6, 'months')">6개월</button>
+		<button onclick="setDate(1, 'years')">1년</button>
+	</div>
+	<div>
+		시작일:
+		<input type="text" id="startdate" readonly placeholder="ex) 2020-01-01">
+		종료일:
+		<input type="text" id="enddate" readonly placeholder="ex) 2020-01-01">
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+	<script>
+
+		var startdate = document.querySelector('#startdate');
+		var enddate = document.querySelector('#enddate');
+
+		function setDate(period, type) {
+			startdate.value = moment().format('YYYY-MM-DD');
+			enddate.value = moment().add(period, type).format('YYYY-MM-DD');
+		}
+
+		// var now = new Date();
+		// var year = now.getFullYear();
+		// var month = now.getMonth() + 1;
+		// var date = now.getDate();
+		// var hour = now.getHours();
+		// var minute = now.getMinutes();
+		// var sec = now.getSeconds();
+		
+		// console.log(year);
+		// console.log(month);
+		// console.log(date);
+		// console.log(hour);
+		// console.log(minute);
+		// console.log(sec);
+
+		// YYYY-MM-DD
+		// var now = moment().add(100, 'days');
+		// var date = now.format('YYYY-MM-DD HH:mm:ss');
+		// console.log(date);
+	</script>
+</body>
+</html>

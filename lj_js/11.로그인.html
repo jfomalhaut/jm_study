@@ -1,0 +1,25 @@
+<html>
+<body>
+	<input type="text" placeholder="username" id="username">
+	<input type="password" placeholder="password" id="password">
+	<button id="login">로그인</button>
+	<script>
+		var USERNAME = 'test1234';
+		var PASSWORD = 'pass1234';
+
+		var username = document.querySelector('#username');
+		var password = document.querySelector('#password');
+		var login = document.querySelector('#login');
+
+		function onLogin() {
+			if (username.value === USERNAME && password.value === PASSWORD) {
+				alert('로그인 성공!');
+			} else {
+				alert('로그인 실패');
+			}
+		}
+
+		login.addEventListener('click', onLogin);
+	</script>
+</body>
+</html>

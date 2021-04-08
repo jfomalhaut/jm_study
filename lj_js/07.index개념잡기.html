@@ -41,12 +41,13 @@
 	<button id="start">자동시작</button>
 	<button id="stop">멈춤</button>
 	<script>
+		var myVar;
 		var index = 0;
-		var nextBtn = document.querySelector('#next');
-		var prevBtn = document.querySelector('#prev');
-		var startBtn = document.querySelector('#start');
-		var stopBtn = document.querySelector('#stop')
-		var banners = document.querySelectorAll('.banner');
+		var nextBtn = one('#next');
+		var prevBtn = one('#prev');
+		var startBtn = one('#start');
+		var stopBtn = one('#stop')
+		var banners = all('.banner');
 		var length = banners.length;
 
 		function next() {
@@ -62,15 +63,16 @@
 				index = index - 1;
 			    index = index % length;
 			}else{
-					index=3;
-				}
+				index=3;
+			}
 
 			banners[index].classList.add('active');
 		}
-		var myVar;
+
 		function myStartFunction() {
-            myVar = setInterval(start11, 1000)
-        }
+			clearInterval(myVar);
+			myVar = setInterval(start11, 1000)
+		}
 
 		function start11(){
 			banners[index].classList.remove('active');
@@ -80,13 +82,22 @@
 		}
 
 		function stop11() {
-            clearInterval(myVar);
-        }
+			clearInterval(myVar);
+		}
 
 		nextBtn.addEventListener('click', next);
 		prevBtn.addEventListener('click', prev)
 		startBtn.addEventListener('click',myStartFunction);
-		stopBtn.addEventListener('click',stop11)
+		stopBtn.addEventListener('click',stop11);
+
+
+		function one(element) {
+			return document.querySelector(element);
+		}
+
+		function all(element) {
+			return document.querySelectorAll(element);
+		}
 		// 숙제 및 심화
 		// 1. 이전 버튼 구현하기
 		// 2. (심화) 자동으로 넘어가게 하기, setInterval
