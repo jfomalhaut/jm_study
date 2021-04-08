@@ -1,0 +1,34 @@
+module.exports={
+    entry:[
+        "./src/index.js"
+    ],
+    //사용할 파일 정리 및 loader매칭
+    module:{
+        rules:[
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use:{
+                    loader:"babel-loader",
+                    options:{
+                        presets:["@babel/preset-env"]
+                    }
+                }
+            }
+        ]
+    },
+    resolve:{
+        extensions: ["*", ".js", ".jsx"]
+    },
+
+    output: {
+        path: __dirname + "/dist/",
+        publicPath: "/",
+        filename: "bundle.js"
+    },
+    devServer:{
+        contentBase: "/dist",
+        port:3000,
+        historyApiFallback: true
+    }
+}

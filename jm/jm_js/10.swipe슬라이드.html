@@ -47,11 +47,17 @@
         var previous=one('#previous')
         var wrapper=one('#wrapper')
         var slides=all('.slide')
+        var length=slides.length;
+        var slideWidth=slides[0].offsetWidth;
         var index=0;
 
         function nextSlide(){
+            if(index===length-1){
+                return;
+            }
             index++;
-            wrapper.style.left=400*index*-1;
+            wrapper.style.left=slideWidth*index*-1;
+
         }
 
         function previousSlide(){
@@ -65,7 +71,7 @@
             return document.querySelector(element);
         }
         function all(element){
-            return documnt.querySelectorAll(element);
+            return document.querySelectorAll(element);
         }
     </script>
 </body>

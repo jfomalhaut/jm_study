@@ -1,0 +1,25 @@
+<html>
+<head>
+
+</head>
+<body>
+    <form name="loginForm" onsubmit="login(event)">
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="submit" value="로그인">
+    </form>
+    <script>
+        var form=document.loginForm;
+        function login(ev){
+            ev.preventDefault();
+            var form=document.loginForm;
+            var username=form.username.value;
+            var password=form.password.value;
+
+            console.log(username);
+            console.log(password);
+        }
+    </script>
+    
+</body>
+</html>
