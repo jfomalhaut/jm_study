@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "babel":{
-    "preset":[
+    "presets":[
     "@babel/preset-env",
     "@babel/preset-react"
     ]

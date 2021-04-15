@@ -22,12 +22,12 @@ module.exports={
     },
 
     output: {
-        path: __dirname + "/dist/",
+        path: __dirname + "/dist",
         publicPath: "/",
         filename: "bundle.js"
     },
     devServer:{
-        contentBase: "/dist",
+        contentBase: "./dist",
         port:3000,
         historyApiFallback: true
     }
