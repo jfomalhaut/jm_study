@@ -9,10 +9,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
   "babel":{
     "presets":[
     "@babel/preset-env",
     "@babel/preset-react"
+=======
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+>>>>>>> 1628c59c7f03b425b5ae212a4da8bdc046a446c2
     ]
   },
   "dependencies": {
