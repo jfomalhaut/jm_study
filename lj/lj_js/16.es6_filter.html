@@ -1,0 +1,38 @@
+<script>
+	var arr = ['민수', '영수', '철수'];
+	var arr2 = [];
+	for (var i in arr) {
+		if (arr[i] !== '철수') {
+			arr2.push(arr[i]);
+		}
+	}
+	
+	// filter에는 조건이 들어간다.
+	var arr3 = arr.filter(item => item !== '철수');
+
+	var friends = [
+		{ id: 1, name: '철수', location: '서울', },
+		{ id: 2, name: '영수', location: '대구', },
+		{ id: 3, name: '민수', location: '경기', },
+		{ id: 4, name: '경수', location: '대구', },
+	];
+
+	var friendsFor = [];
+
+	for (var i in friends) {
+		if (friends[i].name !== '철수') {
+			friendsFor.push(friends[i]);
+		}
+	}
+	// 대구 출신들은 총 몇 명일까?
+	var newGroup = friends.map(item => {
+		if (item.name === '민수') {
+			return ({ ...item, location: '대구' });
+		} else {
+			return item;
+		}
+	}).filter(item => item.location === '대구');
+	console.log(newGroup);
+
+
+</script>

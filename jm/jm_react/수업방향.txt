@@ -1,9 +1,0 @@
-1.처음부터 셋팅
-npm으로 셋팅
-
-2.react의 구성요소
-
-리액트-->webpack,babel,react
-
-webpack:압축기
-babel:번역기

@@ -1,23 +1,29 @@
 <html>
-    <body>
-        <script>
-            var arr=[1,2,3,4,5];
-            let arr10=arr.map(x=>x*10);
-            console.log(arr10);
-            var arr2=[
-                {id:1, name:'과일', price:1000},
-                {id:2, name:'과일', price:1000},
-                {id:3, name:'과일', price:1000},
-                {id:4, name:'과일', price:1000},
-            ]
-            var arr3=arr2.map(item=>{
-                if(item.id===3){
-                    return ({...item, price:7000})
-                }else{
-                    return item;
-                }
-            });
-            console.log(arr3);
-        </script>
-    </body>
+<head>
+
+</head>
+<body>
+    <script>
+         var arr=[1,2,3,4,5];
+         let arr10=arr.map(x=>x*10);
+         console.log(arr10);
+
+         var arr2=[
+             {id:1, name:'과일', price:1000},
+             {id:2, name:'과일1', price:2000},
+             {id:3, name:'과일2', price:3000},
+             {id:4, name:'과일3', price:4000},
+             {id:5, name:'과일4', price:5000},
+
+         ]
+         var arr3=arr2.map(item=>{
+             if(item.id===3){
+                 return ({...item, price:7000})
+             }else{
+                 return item;
+             }
+         });
+         console.log(arr3)
+    </script>
+</body>
 </html>

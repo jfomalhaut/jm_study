@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-<<<<<<< HEAD
+import App from './App';
+import Couter from './routers/Couter'
 
-ReactDOM.render(<h1>Hello World</h1>, document.querySelector('#root'));
-
-
-=======
->>>>>>> 1628c59c7f03b425b5ae212a4da8bdc046a446c2
-
+ReactDOM.render(<Couter/>, document.querySelector('#root'));

@@ -6,7 +6,7 @@
 
 [git 명령어 모음]
 추가할 때 (Upload)
-$ git pull
+$ git pull\
 $ git add .
 $ git commit -m "message"
 $ git push

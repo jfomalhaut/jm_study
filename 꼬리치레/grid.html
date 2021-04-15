@@ -1,0 +1,65 @@
+<html>
+<head>
+    <style>
+    body{
+        background: #222;
+    }
+    .container{
+        width:600px;
+        margin: 0 auto;
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .box{
+        height:150px;
+        background: #fff;
+    }
+    .box:nth-child(1){
+        background-image: url("22.png"), url('11.jpg');
+        background-repeat: repeat;
+        background-size: cover;
+    }
+    .box:nth-child(1){
+        grid-column: 3/5;
+    }
+    .box:nth-child(12){
+        grid-template: 3/5;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" img src="./22.png"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>
+
+
+<!-- .banner1 { background-image: url('https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg'); }
+.banner2 { background-image: url('https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F2214CD4D53F89D7305'); }
+.banner3 { background-image: url('https://t1.daumcdn.net/cfile/tistory/994670335A09371705'); }
+.banner4 { background-image: url('https://i.ytimg.com/vi/U58H_Nd0oWI/maxresdefault.jpg'); } -->
