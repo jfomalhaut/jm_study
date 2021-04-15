@@ -1,5 +1,4 @@
 
-
 React수업방향
 
 1. create-react-app [프로젝트명]
@@ -44,3 +43,13 @@ npm을 이용해서 세팅
 package.json에
 1. 바벨 설정
 2. script 설정
+
+
+
+React 수업내용
+
+컴퍼넌트 종류
+1) class형 컴퍼넌트
+2) function형 컴퍼넌트 O
+
+react-router-dom => path
