@@ -1,0 +1,46 @@
+
+
+React수업방향
+
+1. create-react-app [프로젝트명]
+을 사용하지 않습니다.
+
+2. 처음부터 세팅을 한다.
+npm을 이용해서 세팅
+
+3. react의 구성요소
+	1) 실제페이지가 하나이기 때문에
+	압축이 필요하다 => webpack
+	2) 신문법 import, async await,
+	구문법으로 compile, 번역기
+	babel
+	3) react
+
+
+프로젝트 만드는 방법
+1. package.json 만들기
+	$ npm init -y
+
+2. webpack.config.js을 만든다.
+	그 외 파일 및 폴더 생성
+
+라이브러리 설치
+
+[webpack]
+	webpack
+	webpack-cli
+	webpack-dev-server
+[babel]
+	babel-loader
+	@babel/core
+	@babel/preset-env
+	@babel/preset-react
+	@babel/polyfill
+[react]
+	react
+	react-dom
+	react-router-dom
+
+package.json에
+1. 바벨 설정
+2. script 설정
