@@ -53,3 +53,12 @@ React 수업내용
 2) function형 컴퍼넌트 O
 
 react-router-dom => path
+
+범위 좁게
+
+React => Redux-Saga => API (Nodejs) => Saga => Passport => MySQL => AWS(인스턴스에 DB, NPM설치)
+=> 배포
+
+AWS 백엔드 개발자
+돈 들어가고,
+백업, Certication, SMS, Load Balancer(교통정리), Auto Scaling(차선 늘려주는)
