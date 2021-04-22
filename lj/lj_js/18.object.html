@@ -1,0 +1,26 @@
+<script>
+	var ev = {
+		target: {
+			value: 'abcd',
+			name: '호날두',
+			team: '유벤투스',
+			number: 7
+		}
+	};
+
+	const { target: { value, name, team, number } } = ev;
+	// console.log(value, name, team, number);
+
+
+	var abcd = 'name';
+
+	var player = {};
+	
+	// 아래 세 가지는 동일한 식
+	player[abcd] = '손흥민';
+	player['name'] = '손흥민';
+	player.name = '손흥민';
+
+	console.log(player);
+
+</script>

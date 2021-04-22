@@ -1,0 +1,21 @@
+<script>
+
+	var list = [
+		{name: '홍길동1', age: 20, phone: '01022223333' },
+		{name: '홍길동1', age: 20, phone: '01022223333' },
+		{name: '홍길동1', age: 20, phone: '01022223333' },
+		{name: '홍길동1', age: 20, phone: '01022223333' }
+	];
+
+	var result = list.map(item => (
+		`<li>
+			<div>${item.name}</div>	
+			<div>${item.age}</div>	
+			<div>${item.phone}</div>	
+		</li>`
+	));
+
+	console.log(list);
+	console.log(result);
+
+</script>

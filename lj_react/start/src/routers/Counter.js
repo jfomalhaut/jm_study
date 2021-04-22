@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const PRICE = 3000;
 
-function Couter() {
+function Counter() {
 	const [count, setCount] = useState(0);
 	const [fee, setFee] = useState(2500);
 
@@ -65,4 +65,4 @@ function Couter() {
 	);
 }
 
-export default Couter;
+export default Counter;
