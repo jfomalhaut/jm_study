@@ -5,5 +5,6 @@ import Counter from './routers/Counter';
 import Input from './routers/Input';
 import Input2 from './routers/Input2';
 import Counter2 from './routers/Counter2';
+import Address from './routers/Address';
 
-ReactDOM.render(<Counter2 />, document.querySelector('#root'));
+ReactDOM.render(<Address />, document.querySelector('#root'));
