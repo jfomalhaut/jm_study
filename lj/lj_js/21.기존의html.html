@@ -1,0 +1,16 @@
+<html>
+<body>
+	<h1 id="count">0</h1>
+	<button onclick="increament()">증가</button>
+	
+	<script>
+		var currentValue = 0;
+		var count = document.querySelector('#count');
+
+		function increament() {
+			currentValue++;
+			count.innerHTML = currentValue;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<body>
+	<button onclick="increament()">증가</button>
+	<script>
+		// store안에 저장되는 값
+		var count = 0;
+
+		function increament() {
+			count = count + 1;
+			console.log(count); // console로 확인하던 것을 볼 수 있다면? virtual Dom
+		}
+ㄹ
+		function PageA() {
+			var a = 2; // useState
+			var b = 3;
+			return `
+				<div>
+					<h1>PageA</h1>	
+				</div>
+			`;
+		}
+
+		function PageB() {
+			return `
+				<div>
+					<h1>PageB</h1>	
+				</div>
+			`;
+		}
+	</script>
+</body>
+</html>
