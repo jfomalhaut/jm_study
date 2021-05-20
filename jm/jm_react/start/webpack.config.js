@@ -1,6 +1,7 @@
 module.exports = {
 	// 시작 파일 설정
 	entry: [
+		"@babel/polyfill",
 		"./src/index.js"
 	],
 	// 사용할 파일 정리 및 loader 매칭

@@ -12,6 +12,7 @@ const CountReducer = (state, action) => {
 			return state;
 		}
 	}
+	
 };
 
 function Counter2() {
