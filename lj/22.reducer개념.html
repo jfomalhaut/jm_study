@@ -1,0 +1,20 @@
+<html>
+<body>
+	<script>
+
+
+		var result = factory('PLUS', 100, 200); // 300
+		var result2 = factory('MINUS', 500, 300); // 200
+
+
+		function factory(work, num1, num2) {
+			if (work === 'PLUS') {
+				return num1 + num2;
+			} else if (work === 'MINUS') {
+				return num1 - num2;
+			}
+		}
+
+	</script>
+</body>
+</html>

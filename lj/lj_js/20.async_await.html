@@ -1,0 +1,36 @@
+<script>
+
+	// delay().then(res => {
+	// 	console.log(res);
+	// });
+
+	print();
+
+	function delay() {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve(100);
+			}, 2000);
+		});
+	};
+
+	function first() {
+		return 2;
+	}
+
+	function second() {
+		return 3;
+	}
+
+	async function print() {
+		const num1 = await delay();
+		const num2 = first() * num1;
+		const num3 = second();
+		console.log(num1, num2, num3);
+	}
+
+
+
+
+
+</script>
