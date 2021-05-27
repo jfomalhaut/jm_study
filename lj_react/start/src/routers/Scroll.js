@@ -65,6 +65,7 @@ const Container = styled.main`
 			margin: 0; padding: 0;
 			color: #222;
 		}
+		${'' /* props 안의 active가 true일 때에만 activeStyle 을 적용해라 */}
 		${props => props.active && activeStyle}
 	}
 	main {

@@ -1,0 +1,22 @@
+
+
+<!-- <ListItem item={item} /> -->
+
+<script>
+	// const item = {
+	// 	name: '수박',
+	// 	price: 2000
+	// };
+	const data = {
+		item: {
+			name: '수박',
+			price: 2000
+		}
+	}
+
+	ListItem(data);
+
+	function ListItem({ item: { name, price }}) {
+		console.log(name);
+	}
+</script>
