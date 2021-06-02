@@ -9,10 +9,11 @@ import Address from './routers/Address';
 import Scroll from './routers/Scroll';
 import { Provider } from 'react-redux';
 import store from './store';
+import List from './routers/List'
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<List />
 	</Provider>,
 	document.querySelector('#root')
 );
