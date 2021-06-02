@@ -1,5 +1,38 @@
 import React from 'react';
 import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
+import { PageA, PageB, Scroll } from './routers';
+
+
+
+function App() {
+	return (
+		<BrowserRouter>
+			<nav>
+				<Link to="/pageA">PageA</Link>
+				<Link to="/pageB">PageB</Link>
+				<Link to="/Scroll">onScroll</Link>
+			</nav>
+
+			<Switch >
+				<Route path="/Scroll" component={Scroll}/>	
+				<Route path="/pageA" component={PageA} />
+				<Route path="/pageB" component={PageB} />
+				<Route path="/home" exact render={(props) => (
+					<Home history={props.history} />
+				)} />
+
+				<Route path="/list" component={List} />
+				<Redirect to="/home" />
+			</Switch>
+
+		</BrowserRouter>
+	);
+}
+
+export default App;
+
+
+
 
 export function List() {
 	return (
@@ -21,26 +54,3 @@ export function Home(props) {
 		</div>
 	);
 }
-
-function App() {
-	return (
-		<BrowserRouter>
-			<nav>
-				<Link to="/home">Home!!!!!</Link>
-				<Link to="/list">List~~~~~</Link>
-			</nav>
-
-			<Switch>
-				<Route path="/home" exact render={(props) => (
-					<Home history={props.history} />
-				)} />
-
-				<Route path="/list" component={List} />
-				<Redirect to="/home" />
-			</Switch>
-
-		</BrowserRouter>
-	);
-}
-
-export default App;

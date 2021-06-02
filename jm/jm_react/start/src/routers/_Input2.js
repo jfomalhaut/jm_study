@@ -6,7 +6,7 @@ const field = {
     phone:'',
 }
 
-function _Input2(){
+function Input2(){
     const [info,setInfo] =useState(field);
     const [list, setList] = useState([]);
     const {name, age, phone} = info
@@ -54,4 +54,4 @@ useEffect(()=>{
     )
 
 }
-export default _Input2
+export default Input2;

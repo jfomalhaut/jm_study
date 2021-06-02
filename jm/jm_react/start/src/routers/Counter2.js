@@ -1,33 +1,27 @@
-import React from 'react'
-import { useEffect, useState, useReducer } from 'react'
+import React , {useReducer} from 'react';
 
 const CountReducer = (state, action) => {
-    switch(action.type) {
-        case 'INCREAMENT': {
-            return state+action.custom;
+    switch(action.type){
+        case 'INCREMENT' : {
+            return state + action.custom
         }
-        default: {
-            return state;
-        }
+        default : {
+           return state}
     }
 };
 
-function Counter2(){
-    const [ count, dispatch ] = useReducer(CountReducer, 0);//0->state
+function Counter2 (){
+    const [count, dispatch] = useReducer(CountReducer, 0)
 
-    const increament = () => {
-        dispatch({ type: 'INCREAMENT', custom:10 })
+    const increment = () =>{
+        dispatch({type: 'INCREMENT', custom:10 });
     };
 
-    return(
+    return (
         <div>
-            <h1>Count: {count}</h1>
-            <button onClick={increament}>증가</button>
+            <h1>Count:{count}</h1>
+            <button onClick={increment}>증가</button>
         </div>
     )
 }
-export default Counter2;
-
-
-//숙제
-//1)감소, 2)input창에 입력한 값을 더해서 출력하기
+export default Counter2

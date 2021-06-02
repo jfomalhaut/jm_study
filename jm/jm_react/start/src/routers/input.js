@@ -1,39 +1,31 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-function Input(){
-    const [name, setName] = useState('');
-    const [age, setAge] = useState('');
-    const [phone, setPhone] = useState('');
+function Input () {
+    const [name, setName] = useState('')
+    const [age, setAge] = useState('')
+    const [phone, setPhone] = useState('')
 
-    const onChangeHandlerName= (ev) =>{
+    const onChangeHandler1 = (ev) =>{
         // const value = ev.target.value;
-        const { target: { value } } =ev;
+        const { target: {value} } = ev;
         setName(value);
-        console.log(value)
     }
-    const onChangeHandlerAge= (ev) =>{
-        // const value = ev.target.value;
-        const { target: { value } } =ev;
+    const onChangeHandler2 = (ev) =>{
+        const value = ev.target.value;
         setAge(value);
-        console.log(value)
     }
-    const onChangeHandlerPhone= (ev) =>{
-        // const value = ev.target.value;
-        const { target: { value } } =ev;
+    const onChangeHandler3 = (ev) =>{
+        const value = ev.target.value;
         setPhone(value);
-        console.log(value)
     }
+
     return(
         <div>
-         <h1>Input Component</h1>
-         <div>
-         <input value={name} onChange={onChangeHandlerName} placeholder="이름" />
-         </div>
-         
-         <input value={age} onChange={onChangeHandlerAge} placeholder="값을 입력하시오" />
-         <br/> 
-         <input value={phone} onChange={onChangeHandlerPhone} placeholder="값을 입력하시오" />   
-         <h1>{name} {age} {phone}</h1>
+            <h1>Input Component</h1>
+            <input value={name} onChange={onChangeHandler1} placeholder="이름입력"/>
+            <input value={age} onChange={onChangeHandler2} placeholder="전번입력"/>
+            <input value={phone} onChange={onChangeHandler3} placeholder="폰번입력"/>
+            <div><h1 style={{color:'red'}}>{name} {age} {phone}</h1></div>
         </div>
     );
 }

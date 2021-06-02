@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
-import { PageA, PageB } from './routers';
+import { PageA, PageB, Scroll } from './routers';
 
 
 function App() {
@@ -9,11 +9,13 @@ function App() {
 			<nav>
 				<Link to="/pageA">PageA</Link>
 				<Link to="/pageB">PageB</Link>
+				<Link to="/Scroll">Scroll</Link>
 			</nav>
 
 			<Switch>
 				<Route path="/pageA" component={PageA} />
 				<Route path="/pageB" component={PageB} />
+				<Route path="/Scroll" component={Scroll} />
 				<Route path="/home" exact render={(props) => (
 					<Home history={props.history} />
 				)} />
