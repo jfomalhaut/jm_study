@@ -1,0 +1,9 @@
+
+
+1. 가장 큰 범위의 App이 있고
+2. App 안에 포함된 Router와 Component가 있다.
+3. Router나 Component 내에서 사용되는 값은 지역 값(local State)이 있고,
+4. Application 전체에서 통용되는 전역 값(global State)가 있다.
+
+reducer = 협력업체 하청업체
+guide 를 주어야 한다. (=type)
