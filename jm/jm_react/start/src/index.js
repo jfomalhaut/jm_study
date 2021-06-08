@@ -10,10 +10,11 @@ import Scroll from './routers/Scroll';
 import { Provider } from 'react-redux';
 import store from './store';
 import List from './routers/List'
+import Signin from './routers/Signin'
 
 ReactDOM.render(
 	<Provider store={store}>
-		<List />
+		<Signin />
 	</Provider>,
 	document.querySelector('#root')
 );

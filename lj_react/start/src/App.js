@@ -11,12 +11,8 @@ function App() {
 			<nav>
 				<Link to="/pageA">PageA</Link>
 				<Link to="/pageB">PageB</Link>
-<<<<<<< HEAD
-				<Link to="/Scroll">Scroll</Link>
-=======
 				<Link to="/scroll">Scroll</Link>
 				<h1>{value}</h1>
->>>>>>> d6060014452aa0c8204d9dbaf636697617d6a396
 			</nav>
 
 			<Switch>
