@@ -1,0 +1,20 @@
+<script>
+
+	var order = [
+		{ id: 1, date: '2021', content: '사과 10개 구매' },
+		{ id: 2, date: '2021', content: '포도 2개 구매' },
+		{ id: 3, date: '2020', content: '사과 3개 구매' },
+		{ id: 4, date: '2019', content: '오렌지 5개 구매' },
+		{ id: 5, date: '2019', content: '무화과 9개 구매' },
+		{ id: 6, date: '2019', content: '오이 9개 구매' },
+		{ id: 7, date: '2018', content: '갈치 1마리 구매' },
+	];
+
+	var newArray = order.reduce((acc, cur) => {
+		return {
+			...acc,
+			[cur.date]: acc[cur.date] ? [ ...acc[cur.date], cur] : [ cur ]
+		}
+	}, {});
+
+</script>

@@ -1,22 +1,22 @@
-[2����]
-������
-position
+새로 배워야 하는 것들.
 
-[3����]
-flex
-grid
-transition => �ð��� �����Ǵ� ����(s)
-animation,
+1) 구글링
+2) keyword 
 
-media query
+useState hook.
 
-[4����]
-1. Javascript
-- �迭
-- ���ǹ�
-- �ݺ���
-- �Լ�
+redux.
 
-[5����]
-[6주차]
-es6문법
+공유 다이어리 만들기
+
+1. 3페이지
+2. DB - MYSQL
+3. nodejs
+** 4. passport - 로그인 세션 (인증시스템)
+5. AWS 배포
+
+redux.
+
+Nodejs -> AWS 배포
+
+redux-saga

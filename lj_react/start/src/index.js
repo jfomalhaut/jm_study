@@ -10,10 +10,12 @@ import List from './routers/List';
 import Scroll from './routers/Scroll';
 import { Provider } from 'react-redux';
 import store from './store';
+import List2 from './routers/List2';
+import Signin from './routers/Signin';
 
 ReactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.querySelector('#root')
+	// <Provider store={store}>
+	// 	<App />
+	// </Provider>,
+	<Signin />, document.querySelector('#root')
 );
