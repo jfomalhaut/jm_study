@@ -1,23 +1,18 @@
 import React from 'react';
 
-function ListItem({ onChange, item: { id, name11, price, count1 = 0, count2=0 } }) {
-	const onChangeHandler = (ev) => {
-		const { target: { value, name} }  = ev;
-		onChange({id, value, name});
+function ListItem({onChange, item:{id, name, price, count=0}}){
+	const onChangeHandler = (ev) =>{
+		const {target:{value}} = ev;
+		onChange(id, value);
 	};
-
-	return (
+	return(
 		<li>
-			<h1>{name11}</h1>
-			<h3>{price}원</h3>
+			<h1>{name}</h1>
+			<h2>{price}원</h2>
 			<label>
-				수량 : <input type="text" name="count1" value={count1} onChange={onChangeHandler} />
-			</label>
-            <label>
-				수량2 : <input type="text" name="count2" value={count2} onChange={onChangeHandler} />
+				수량: <input type="text" value={count} onChange={onChangeHandler} />
 			</label>
 		</li>
 	)
 }
-
 export default ListItem;

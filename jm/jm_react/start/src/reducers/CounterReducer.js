@@ -1,11 +1,11 @@
-import { CounterAction } from '../actions'
-const { INCREMENT } = CounterAction;
+import { CounterAction } from '../actions';
+const { INCREAMENT } = CounterAction;
 
 const initialState = 0;
 
 const CounterReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case INCREMENT: {
+		case INCREAMENT: {
 			return state + action.add;
 		}
 

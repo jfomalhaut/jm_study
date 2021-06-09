@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { CounterAction } from '../actions';
 
-function PageA() {
+function PageA(){
 	const dispatch = useDispatch();
 
 	const increament = () => {
@@ -10,16 +10,13 @@ function PageA() {
 		dispatch(CounterAction.increament(100));
 	};
 
-	return (
+
+	return(
 		<div>
-			<h1>PageA</h1>
-			<button onClick={increament}>increament</button>
+			<h1>PAgeA</h1>
+			<button onClick={increament}>increment</button>
 		</div>
-	);
-}
+	)
+};
 
 export default PageA;
-
-
-// 숙제:
-// input으로 값을 받아서 그 값을 global state에 더해보기

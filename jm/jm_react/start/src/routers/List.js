@@ -1,46 +1,43 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
-import { ListItem } from '../components'
+import {ListItem} from '../components';
 
 const PRODUCT = [
-    {id:1, name11:'사과', price: 1000 },
-    {id:2, name11:'사과', price: 1000 },
-    {id:3, name11:'사과', price: 1000 },
-    {id:4, name11:'사과', price: 1000 },
-    {id:5, name11:'사과', price: 1000 },
-];
-
+    { id:1 , name:'사과', price:1000},
+    { id:2 , name:'배', price:3000},
+    { id:3 , name:'딸기', price:2000},
+    { id:4 , name:'우유', price:4000},
+    { id:5 , name:'밀', price:5000},
+]
 function List(){
     const [total, setTotal] = useState(0);
     const [product, setProduct] = useState(PRODUCT);
 
-    const onChange = ({id, value, name}) =>{
-        const newProduct =product.map(item=>item.id === id ? ({...item, [name]:value}) : item);
-        setProduct(newProduct)
-    };
+    const onChange = (id, value) =>{
+       const count = value * 1
+       const newProduct =product.map(item=>item.id===id ? ({...item, count}) : item);
+       setProduct(newProduct);
+    }
 
     useEffect(()=>{
-        const _total = product.reduce((acc, item) => {
-            const ct1 = item.count1 ? item.count1 : 0;
-            const ct2 = item.count2 ? item.count2 : 0;
-            return acc + item.price * ct1 * ct2;
-            console.log(ct1)
-            console.log(ct2)
-        },0);
+        const _total = product.reduce((acc,item)=>{
+            const ct = item.count ? item.count : 0;
+            return acc+item.price*ct;
+        },0)
         setTotal(_total)
     },[product])
 
     return(
         <Container>
-            {product.map(item => (
+            {product.map(item=>(
                 <ListItem item={item} onChange={onChange} key={`PRODUCT${item.id}`}/>
-                
             ))}
-            <h1>{total}</h1>
+            <h1>Total : {total}원</h1>
         </Container>
     )
 }
 export default List;
+
 const Container = styled.ul`
 
 `;
