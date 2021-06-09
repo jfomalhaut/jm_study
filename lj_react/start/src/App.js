@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Link, Redirect, Route, Switch } from 'react-router-dom';
-import { PageA, PageB, Scroll } from './routers';
+import { PageA, PageB, Scroll, Signin } from './routers';
 
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
 				<Link to="/pageA">PageA</Link>
 				<Link to="/pageB">PageB</Link>
 				<Link to="/scroll">Scroll</Link>
+				<Link to="/signin">로그인</Link>
 				<h1>{value}</h1>
 			</nav>
 
@@ -20,12 +21,13 @@ function App() {
 				<Route path="/pageA" component={PageA} />
 				<Route path="/pageB" component={PageB} />
 				<Route path="/Scroll" component={Scroll} />
-				<Route path="/home" exact render={(props) => (
+				<Route path="/signin" exact component={Signin} />
+				<Route path="/home" render={(props) => (
 					<Home history={props.history} />
 				)} />
 
 				<Route path="/list" component={List} />
-				<Redirect to="/home" />
+				<Redirect to="/signin" />
 			</Switch>
 
 		</BrowserRouter>

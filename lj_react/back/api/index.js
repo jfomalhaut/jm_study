@@ -28,4 +28,21 @@ router.get('/getName', middleware, (req, res) => {
 	res.send(`<h1>Bye, ${name}!</h1>`);
 });
 
+router.post('/user/sigin', (req, res) => {
+	console.log('dd');
+	const { body: { username, password } } = req;
+	console.log(username);
+	if (USERNAME === username && PASSWORD === password) {
+		res.status(200).send({
+			user: {
+				name: '이준',
+				username,
+			},
+			token: 'abcd'
+		});
+	} else {
+		res.status(200).send(false);
+	}
+})
+
 module.exports = router;

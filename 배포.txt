@@ -1,0 +1,16 @@
+
+1. 인스턴스 만들기
+2. 보안설정 (22/3306/80/443) (FTP/DB/기본포트/https)
+3. Nodejs, NPM 설치
+4. DB설치 (MySQL)
+5. Route53에서 호스팅 생성
+6. 도메인 구매 후 NameServer를 AWS로 변경
+7. Certificate 인증서 발급 (443PORT, Https 사용을 위해)
+8. Load Balancer -> 트래픽이 증가할 때 교통정리
+9. 도메인과 서버 연결 종료.
+
++ Auto Scaling => 자동으로 늘려주는 시스템
+
+필요 준비물
+1. 도메인 500원짜리 (.shop)
+2. AWS 무료계정
