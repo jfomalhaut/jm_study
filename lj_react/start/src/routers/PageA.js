@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { CounterAction } from '../actions';
 
-function PageA() {
+function PageA(props) {
 	const dispatch = useDispatch();
 
 	const increament = () => {

@@ -12,7 +12,7 @@ app.use(cors({
 	methods: ['GET', 'POST'],
 	origin: [
 		'http://localhost',
-		'http://localhost:3000',
+		'http://localhost:3000'
 	]
 }));
 
@@ -24,6 +24,8 @@ app.use(cors({
 app.use('/api', api);
 app.use('/', express.static(path.join(path.resolve(), './dist')));
 app.get('*', (req, res) => {
+	// index.html =>  main
+	// index.html => business => business
 	res.sendFile(path.resolve(path.resolve(), 'dist', 'index.html'));
 });
 

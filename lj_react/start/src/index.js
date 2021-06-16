@@ -9,13 +9,16 @@ import Address from './routers/Address';
 import List from './routers/List';
 import Scroll from './routers/Scroll';
 import { Provider } from 'react-redux';
-import store from './store';
+import { store, persistor } from './store';
 import List2 from './routers/List2';
 import Signin from './routers/Signin';
+import { PersistGate } from 'redux-persist/es/integration/react';
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App />
+		<PersistGate loading={null} persistor={persistor}>
+			<App />
+		</PersistGate>
 	</Provider>,
 	document.querySelector('#root')
 );

@@ -28,7 +28,7 @@ router.get('/getName', middleware, (req, res) => {
 	res.send(`<h1>Bye, ${name}!</h1>`);
 });
 
-router.post('/user/sigin', (req, res) => {
+router.post('/user/signin', (req, res) => {
 	console.log('dd');
 	const { body: { username, password } } = req;
 	console.log(username);
