@@ -1,6 +1,6 @@
-import { spawn } from "@redux-saga/core/effects";
-import UserSaga from './UserSaga'
+import { spawn } from 'redux-saga/effects';
+import UserSaga from './UserSaga';
 
-export default function* rootSaga() {
-    yield spawn(UserSaga);
-};
+export default function* rootSaga(){
+    yield spawn(UserSaga)
+}

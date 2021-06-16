@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-export const API = 'http://localhost/api';
+export const API = 'http://localhost/api/';
 
 const getRequest = async (url) =>{
     return await Axios.get(`${API}/${url}`);

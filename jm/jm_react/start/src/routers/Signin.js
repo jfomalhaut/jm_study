@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Login } from '../api';
+import { useDispatch } from 'react-redux';
+import { UserAction } from '../actions';
 
 const field = {
 	username: '',
@@ -20,7 +22,7 @@ function Signin() {
 	};
 
 	const login = async () => {
-		dispatch(UserAction.login(userinfo))
+		dispatch(UserAction.login(userinfo));
 		// try {
 		// 	console.log(userinfo);
 		// 	const { data } = await Login(userinfo);

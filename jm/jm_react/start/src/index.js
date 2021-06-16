@@ -13,8 +13,8 @@ import List from './routers/List'
 import Signin from './routers/Signin'
 
 ReactDOM.render(
-	// <Provider store={store}>
-	// <App />
-	// </Provider>
-	<Signin />,document.querySelector('#root')
+	<Provider store={store}>
+	<App />
+	</Provider>
+	,document.querySelector('#root')
 );

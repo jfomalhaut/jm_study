@@ -1,6 +1,5 @@
 import { UserAction } from '../actions'
-
-const {
+const{
     LOGIN,
     LOGIN_SUCCESS,
     LOGIN_FAILURE,
@@ -9,54 +8,62 @@ const {
     RESTORE,
 } = UserAction;
 
-const initialState={
+const initialState = {
     userinfo: {},
     logged: false,
-    token: '',
+    token='',
     status: 0
 };
 
-const UserReducer = ( state = initialState, action) => {
-    switch (action.type) {
-        case LOGIN: {
+const UserReducer = (state = initialState, action) => {
+    switch (action.type){
+        case LOGIN:{
             return state;
         }
         case LOGIN_SUCCESS:{
             return{
                 ...state,
-            logged: true,
-            userinfo: action.userinfo,
-            token: action.token,
-            status: 0
+                logged: true,
+                userinfo: action.userinfo,
+                token: action.token,
+                status: 0    
             }
         }
         case LOGIN_FAILURE:{
             return{
                 ...state,
-            logged: false,
-            userinfo: {},
-            token: '',
-            status: 1
+                logged: false,
+                userinfo:{},
+                token:'',
+                status:1
+            }
+        }
+        case LOGOUT: {
+            return{
+                ...state,
+                logged: false,
+                userinfo: {},
+                token: '',
+                status: 0
             }
         }
         case RESTORE:{
             return{
                 ...state,
-            status: 0,
-            logged: false,
-            token: ''
+                status: 0,
+                logged: false,
+                token: '',
             }
         }
         case SET_USER:{
             return{
                 ...state,
-           userinfo: action.userinfo
+                userinfo: action.userinfo
             }
         }
         default: {
             return state;
         }
-
     }
 }
 export default UserReducer;
