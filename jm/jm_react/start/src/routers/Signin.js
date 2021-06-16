@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Login } from '../api';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { UserAction } from '../actions';
 
 const field = {
@@ -8,10 +8,12 @@ const field = {
 	password: '',
 };
 
-function Signin() {
+function Signin({ history }) {
 	const dispatch = useDispatch();
 	const [userinfo, setUserinfo] = useState(field);
 	const { username, password } = userinfo;
+
+	const { logged, status } = useSelector(state => state.user);
 
 	const onChangeHandler = (ev) => {
 		const { target: { name, value } } = ev;
@@ -41,6 +43,23 @@ function Signin() {
 		ev.preventDefault();
 		login();
 	};
+
+	useEffect(()=>{
+		if(logged) {
+			history.push('/pageA');
+		}
+	},[logged])
+
+	useEffect(()=>{
+		if (status === 1){
+			alert('일치하는 정보가 없습니다.');
+			setUserinfo({
+				...userinfo,
+				password: ''
+			});
+			dispatch(UserAction.restore());
+		}
+	},[status])
 
 	return (
 		<form onSubmit={onSubmit}>
