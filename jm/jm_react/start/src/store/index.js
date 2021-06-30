@@ -1,4 +1,4 @@
-import { createStore, compose, applyMiddleware } from "redux";
+import { createStore, compose, applyMiddleware } from 'redux';
 import rootReducer from '../reducers';
 import rootSaga from '../sagas';
 import storage from 'redux-persist/lib/storage';
@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 const persistConfig = {
     key: 'study_redux_saga',
     storage,
-    whitelist: ['user']
+    whitelist:['user']
 };
 
 const enchancedReducer = persistReducer(persistConfig, rootReducer);
@@ -18,4 +18,4 @@ const store = createStore(enchancedReducer, composeEnhancers(applyMiddleware(sag
 const persistor = persistStore(store);
 sagaMiddleware.run(rootSaga);
 
-export { store, persistor}
+export { store, persistor };

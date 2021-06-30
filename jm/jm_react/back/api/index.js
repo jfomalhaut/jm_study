@@ -20,8 +20,10 @@ router.post('/login', (req, res) => {
   const {
     body: { username, password },
   } = req
+  
   if (USERNAME === username && PASSWORD === password) {
     res.status(200).send(true)
+    console.log(username)
   } else {
     res.status(200).send(false)
   }
@@ -34,7 +36,7 @@ router.get('/getName', middleware, (req, res) => {
 })
 
 router.post('/user/signin', (req, res) => {
-  console.log('dd')
+  console.log('asdasdasd')
   const {
     body: { username, password },
   } = req
