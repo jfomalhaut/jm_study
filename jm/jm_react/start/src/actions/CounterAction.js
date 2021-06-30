@@ -1,7 +1,7 @@
-const INCREAMENT = 'INCREAMENT';
-const increament = (add) => ({ type: INCREAMENT, add });
+const INCREMENT = 'INCREMENT'
+const increment = (add) => ({
+  type: INCREMENT,
+  add,
+})
 
-export default {
-	INCREAMENT,
-	increament
-};
+export default { INCREMENT, increment }
