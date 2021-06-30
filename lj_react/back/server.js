@@ -23,10 +23,15 @@ app.use(cors({
 
 app.use('/api', api);
 app.use('/', express.static(path.join(path.resolve(), './dist')));
+app.use('/files', express.static(path.join(path.resolve(), './files')));
+// app.use('/home', express.static(path.join(path.resolve(), './dist')));
+// app.use('/pageB', express.static(path.join(path.resolve(), './dist')));
+// app.use('/pageA', express.static(path.join(path.resolve(), './dist')));
+
 app.get('*', (req, res) => {
 	// index.html =>  main
 	// index.html => business => business
-	res.sendFile(path.resolve(path.resolve(), 'dist', 'index.html'));
+	res.sendFile(path.resolve(path.resolve(), 'dist', 'index.html')); // react 프로젝트
 });
 
 app.listen(PORT, () => {
