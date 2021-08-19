@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { GetComment, GetPostDetail, PostComment } from '../api';
+import { GetComment, GetFiles, GetPostDetail, PostComment } from '../api';
+import { Byte } from '../custom';
 
 const field = {
 	diary_id: 0,
@@ -11,10 +12,14 @@ const field = {
 	create_datetime: '',
 };
 
+const ImageTypes = ['image/gif', 'image/png', 'image/jpeg', 'image/bmp', 'image/webp'];
+
 const Detail = ({ match: { params: { id } } }) => {
 	const [info, setInfo] = useState(field);
 	const [comments, setComments] = useState([]);
 	const [comment, setComment] = useState('');
+	const [files, setFiles] = useState([]);
+	const [images, setImages] = useState([]);
 	const { diary_id, title, content, view, writer, create_datetime } = info;
 
 	const getPostDetail = async () => {
@@ -31,6 +36,17 @@ const Detail = ({ match: { params: { id } } }) => {
 		try {
 			const { data } = await GetComment(id);
 			setComments(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const getFiles = async () => {
+		try {
+			const { data } = await GetFiles(id);
+			const _imgs = data.filter(item => ImageTypes.indexOf(item.mimetype) !== -1);
+			setFiles(data);
+			setImages(_imgs);
 		} catch (error) {
 			console.log(error);
 		}
@@ -64,6 +80,7 @@ const Detail = ({ match: { params: { id } } }) => {
 		window.scrollTo(0, 0);
 		getPostDetail();
 		getComment();
+		getFiles();
 	}, []);
 
 	return (
@@ -76,6 +93,20 @@ const Detail = ({ match: { params: { id } } }) => {
 				</div>
 			</header>
 			<p>{content}</p>
+			<h3>이미지</h3>
+			<figure>
+				{images.map(item => (
+					<img src={`http://localhost/files/${item.filename}`} />
+				))}
+			</figure>
+			<h3>첨부파일</h3>
+			<footer>
+				{files.map(item => (
+					<article>
+						<a target="_blank" download href={`http://localhost/files/${item.filename}`}>{item.originalname} ({Byte(item.size)})</a>
+					</article>
+				))}
+			</footer>
 			<section>
 				<form onSubmit={submitComment}>
 					<input type="text" value={comment} onChange={(ev) => setComment(ev.target.value)} placeholder="댓글을 남겨주세요" />

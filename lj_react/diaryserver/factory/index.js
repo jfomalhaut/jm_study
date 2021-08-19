@@ -34,19 +34,44 @@ const handleDisconnect = () => {
 
 handleDisconnect();
 
-module.exports.postDiary = (req, res) => {
+module.exports.postDiary = (req, res, next) => {
 	console.log(req.body);
 	const { body: { writer, content, title, category_id } } = req;
 	sql = `
 		INSERT INTO diary(writer, category_id, title, content, view, create_datetime)
 		VALUES(?, ?, ?, ?, 0, NOW());
 	`;
-	conn.query(sql, [writer, category_id, title, content], (err) => {
+	conn.query(sql, [writer, category_id, title, content], (err, result) => {
 		if (err) {
 			console.log(err);
 			res.status(500).send(false);
 		} else {
-			res.status(200).send(true);
+			const { insertId } = result;
+			res.locals.diary_id = insertId;
+			next();
+		}
+	});
+};
+
+module.exports.insertFiles = (req, res) => {
+	const { files: { file = [] } } = req;
+	const { locals: { diary_id } } = res;
+	if (file.length === 0) {
+		res.send(true);
+		return;
+	}
+
+	console.log(file);
+
+	const insertSQL = file.map(item => `(${diary_id}, '${item.filename}', '${item.originalname}', ${item.size}, '${item.mimetype}')`);
+
+	sql = `INSERT INTO files(diary_id, filename, originalname, size, mimetype) VALUES ${insertSQL.join()}`;
+	conn.query(sql, (err) => {
+		if (err) {
+			console.log(err);
+			res.send(false);
+		} else {
+			res.send(true);
 		}
 	});
 };
@@ -77,6 +102,7 @@ module.exports.getDiaryPost = (req, res) => {
 		SELECT d.*, c.category_name 
 		FROM diary d, category c 
 		WHERE d.category_id = c.category_id
+		ORDER BY diary_id DESC
 		${addSql}
 	`;
 	conn.query(sql, (err, data) => {
@@ -140,6 +166,20 @@ module.exports.postComment = (req, res) => {
 			res.status(500).send(false);
 		} else {
 			res.status(200).send(true);
+		}
+	});
+};
+
+// 파일을 불러오기
+module.exports.getFiles = (req, res) => {
+	const { params: { diary_id } } = req;
+	sql = `SELECT * FROM files WHERE diary_id = ?`;
+	conn.query(sql, [diary_id], (err, data) => {
+		if (err) {
+			console.log(err);
+			res.status(500).send(false);
+		} else {
+			res.status(200).send(data);
 		}
 	});
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components';
 import { GetCategory, PostDiary } from '../api';
 
@@ -8,6 +8,8 @@ const field = {
 	writer: 1,
 	category_id: 0,
 };
+
+// image/gif, image/png, image/jpeg, image/bmp, image/webp
 
 const Write = () => {
 	const [cate, setCate] = useState([]);
@@ -31,26 +33,6 @@ const Write = () => {
 		setPayload(files);
 	};
 
-	// const upload = async () => {
-	// 	try {
-	// 		const formData = new FormData();
-	// 		for (let i in payload) {
-	// 			formData.append('file', payload[i]);
-	// 		}
-
-	// 		for (let key in info) {
-	// 			formData.append(key, info[key]);
-	// 		}
-
-	// 		const { data } = await Axios.post('http://localhost/api/upload', formData, { withCredentials: true });
-	// 		// const { data } = await Axios.get('http://localhost/api/test', { withCredentials: true });
-	// 		console.log(data);
-
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// };
-
 	const onChangeValue = (ev) => {
 		const { target: { name, value } } = ev;
 		setInfo({
@@ -71,10 +53,8 @@ const Write = () => {
 				formData.append(key, info[key]);
 			}
 			const { data } = await PostDiary(formData);
-			if (data) {
-				alert('작성완료');
-				setInfo(field);
-			}
+			alert('작성완료');
+			setInfo(field);
 		} catch (error) {
 			console.log(error);
 			alert('네트워크 오류 발생');

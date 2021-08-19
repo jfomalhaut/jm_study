@@ -8,7 +8,7 @@ const getRequest = async (_path) => {
 };
 
 const postRequest = async (_path, payload) => {
-	return await Axios.post(`${API}/${_path}`, payload);
+	return await Axios.post(`${API}/${_path}`, payload, { withCredentials: true });
 };
 
 // 다이어리 리스트 불러오기
@@ -50,4 +50,10 @@ export const GetComment = (diary_id) => {
 export const PostComment = (payload) => {
 	path = 'postComment';
 	return postRequest(path, payload);
+};
+
+// 코맨트 불러오기
+export const GetFiles = (diary_id) => {
+	path = 'getFiles/' + diary_id;
+	return getRequest(path);
 };
