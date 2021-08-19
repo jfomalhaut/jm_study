@@ -35,6 +35,7 @@ const handleDisconnect = () => {
 handleDisconnect();
 
 module.exports.postDiary = (req, res) => {
+	console.log(req.body);
 	const { body: { writer, content, title, category_id } } = req;
 	sql = `
 		INSERT INTO diary(writer, category_id, title, content, view, create_datetime)
@@ -42,6 +43,7 @@ module.exports.postDiary = (req, res) => {
 	`;
 	conn.query(sql, [writer, category_id, title, content], (err) => {
 		if (err) {
+			console.log(err);
 			res.status(500).send(false);
 		} else {
 			res.status(200).send(true);

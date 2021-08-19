@@ -62,3 +62,25 @@ React => Redux-Saga => API (Nodejs) => Saga => Passport => MySQL => AWS(인스�
 AWS 백엔드 개발자
 돈 들어가고,
 백업, Certication, SMS, Load Balancer(교통정리), Auto Scaling(차선 늘려주는)
+
+
+
+Axios와 fetch
+
+1. Axios는 외부 모듈 / fetch 내장
+2. 성능 Axios > fetch
+3. 기능 Axios > fetch
+
+왜 RN 에서는 fetch를 쓰느냐.
+Axios를 써도 문제가 크게 없다.
+
+변수
+RN이 업데이트가 잦다.
+RN 업데이트 => fetch 업데이트
+RN 업데이트 !== Axios 업데이트
+
+위험도 (불일치, 의존성) Axios > fetch
+
+보통
+웹 => Axios
+앱 => fetch
