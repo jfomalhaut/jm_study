@@ -87,3 +87,59 @@ module.exports.getDiaryPost = (req, res) => {
 		}
 	});
 };
+
+// 게시글 상세보기
+module.exports.getPostDetail = (req, res) => {
+	const { params: { diary_id } } = req;
+	sql = `SELECT * FROM diary WHERE diary_id = ?`;
+	conn.query(sql, [diary_id], (err, data) => {
+		if (err) {
+			console.log(err);
+			res.status(500).send(false);
+		} else {
+			res.status(200).send(data);
+		}
+	});
+};
+
+// 조회수 증가.
+module.exports.increaseView = (req, res, next) => {
+	const { params: { diary_id } } = req;
+	sql = `UPDATE diary SET view = view + 1 WHERE diary_id = ?`;
+	conn.query(sql, [diary_id], (err, data) => {
+		if (err) {
+			console.log(err);
+			res.status(500).send(false);
+		} else {
+			next();
+		}
+	});
+};
+
+// 전체 코맨트를 불러오기
+module.exports.getComment = (req, res) => {
+	const { params: { diary_id } } = req;
+	sql = `SELECT * FROM comment WHERE diary_id = ? ORDER BY comment_id DESC`;
+	conn.query(sql, [diary_id], (err, data) => {
+		if (err) {
+			console.log(err);
+			res.status(500).send(false);
+		} else {
+			res.status(200).send(data);
+		}
+	});
+};
+
+// 코맨트 작성하기
+module.exports.postComment = (req, res) => {
+	const { body: { writer, content, diary_id } } = req;
+	sql = `INSERT INTO comment(writer, diary_id, content, datetime) VALUES(?, ?, ?, NOW())`;
+	conn.query(sql, [writer, diary_id, content], (err) => {
+		if (err) {
+			console.log(err);
+			res.status(500).send(false);
+		} else {
+			res.status(200).send(true);
+		}
+	});
+};

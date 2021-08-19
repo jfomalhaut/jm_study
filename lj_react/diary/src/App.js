@@ -10,7 +10,7 @@ const App = () => {
 			<Switch>
 				<Route path="/list" component={List} />
 				<Route path="/write" component={Write} />
-				<Route path="/detail" component={Detail} />
+				<Route path="/detail/:id" component={Detail} />
 				<Redirect to="/list" />
 			</Switch>
 		</BrowserRouter>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { GetDiaryPost, GetCategory } from '../api';
 import moment from 'moment';
 
-const List = () => {
+const List = ({ history }) => {
 	const [posts, setPosts] = useState([]);
 	const [selected, setSelected] = useState(0);
 	const [category, setCategory] = useState([]);
@@ -31,6 +31,10 @@ const List = () => {
 		} catch (error) {
 			console.log(error);
 		}
+	};
+
+	const detail = (id) => {
+		history.push(`detail/${id}`);
 	};
 
 	useEffect(() => {
@@ -70,7 +74,7 @@ const List = () => {
 							<span>조회수</span>
 						</li>
 						{posts.map((item, idx) => (
-							<li key={`POSTS${item.diary_id}`}>
+							<li key={`POSTS${item.diary_id}`} onClick={() => detail(item.diary_id)}>
 								<span>{idx + 1}</span>
 								<span>{item.title}</span>
 								<span>{item.writer}</span>

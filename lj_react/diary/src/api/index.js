@@ -33,3 +33,21 @@ export const GetDiaryPost = (payload) => {
 	path = 'getDiaryPost';
 	return postRequest(path, payload);
 };
+
+// 다이어리 상세 내용
+export const GetPostDetail = (diary_id) => {
+	path = 'getPostDetail/' + diary_id;
+	return getRequest(path);
+};
+
+// 코맨트 불러오기
+export const GetComment = (diary_id) => {
+	path = 'getComment/' + diary_id;
+	return getRequest(path);
+};
+
+// 코맨트 작성하기
+export const PostComment = (payload) => {
+	path = 'postComment';
+	return postRequest(path, payload);
+};

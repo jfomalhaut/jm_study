@@ -13,6 +13,43 @@ const Write = () => {
 	const [cate, setCate] = useState([]);
 	const [info, setInfo] = useState(field);
 	const { title, content, writer, category_id } = info;
+	const fileRef = useRef();
+	const [payload, setPayload] = useState(null);
+	const [view, setView] = useState('');
+
+	const onChangeFile = (ev) => {
+		const { target: { files } } = ev;
+
+		let reader = new FileReader();
+		reader.onloaded = () => {
+			const base64 = reader.result;
+			if (base64) {
+				setView(base64.toString())
+			}
+		}
+
+		setPayload(files);
+	};
+
+	// const upload = async () => {
+	// 	try {
+	// 		const formData = new FormData();
+	// 		for (let i in payload) {
+	// 			formData.append('file', payload[i]);
+	// 		}
+
+	// 		for (let key in info) {
+	// 			formData.append(key, info[key]);
+	// 		}
+
+	// 		const { data } = await Axios.post('http://localhost/api/upload', formData, { withCredentials: true });
+	// 		// const { data } = await Axios.get('http://localhost/api/test', { withCredentials: true });
+	// 		console.log(data);
+
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
+	// };
 
 	const onChangeValue = (ev) => {
 		const { target: { name, value } } = ev;
@@ -25,7 +62,15 @@ const Write = () => {
 	const write = async (ev) => {
 		ev.preventDefault();
 		try {
-			const { data } = await PostDiary(info);
+			const formData = new FormData();
+			for (let i in payload) {
+				formData.append('file', payload[i]);
+			}
+
+			for (let key in info) {
+				formData.append(key, info[key]);
+			}
+			const { data } = await PostDiary(formData);
 			if (data) {
 				alert('작성완료');
 				setInfo(field);
@@ -74,6 +119,10 @@ const Write = () => {
 					<div>
 						<label>내용</label>
 						<textarea type="text" name="content" value={content} onChange={onChangeValue} />
+					</div>
+					<div>
+						<label>첨부파일</label>
+						<input type="file" ref={fileRef} multiple onChange={onChangeFile} accept="*" />
 					</div>
 					<button>작성</button>
 				</form>

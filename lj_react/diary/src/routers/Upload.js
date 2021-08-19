@@ -34,12 +34,6 @@ const Upload = () => {
 				formData.append('file', payload[i]);
 			}
 
-			// writer, title, content, category_id
-			// formData.append('writer', 1);
-			// formData.append('title', '안녕하세요! 제목입니다');
-			// formData.append('content', '내용입니다');
-			// formData.append('category_id', 3);
-
 			for (let key in info) {
 				formData.append(key, info[key]);
 			}
