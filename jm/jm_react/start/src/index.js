@@ -12,12 +12,9 @@ import { store, persistor } from './store'
 import List from './routers/List'
 import Signin from './routers/Signin'
 import { PersistGate } from 'redux-persist/es/integration/react'
+import Chat from './routers/Chat'
 
 ReactDOM.render(
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <App />
-    </PersistGate>
-  </Provider>,
+  <Chat/>,
   document.querySelector('#root')
 )
